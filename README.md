@@ -1,1 +1,1 @@
-# gsocsl17.github.com
+# gsocsl17.github.io
