@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html ⚡ lang="en">
-  {% include head.html %}
-  <body>
-    {% include header.html %}
+---
+layout: base
+bodyExt: 'class="content-page"'
+---
+{% include nav.html %}
 
-    {{ content }}
+<div class="logo"><a href="/">
+  {% include logo.svg %}
+</a></div>
 
-    {% comment %}
-        {% include analytics.html %}
-    {% endcomment %}
-  </body>
-</html>
+{{ content }}
+
+{% include footer.html %}

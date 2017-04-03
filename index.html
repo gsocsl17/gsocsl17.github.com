@@ -1,50 +1,161 @@
 ---
-layout: default
+layout: base
+title: Sugar Labs
 ---
+{% include nav.html %}
 
-<main class="content" role="main">
+<div class="logo">
+  {% include logo.svg %}
+  <p>Learning software for children</p>
+</div>
 
-  <header class="blog-header">
-      <h1 class="blog-title">{{ site.title }}</h1>
-      <h2 class="blog-description">{{ site.description }}</h2>
-  </header>
+<div class="headerbox standardbox">
+  <p>At Sugar Labs, we make a collection of tools that learners
+  use to explore, discover, create, and reflect.
+  We are non-profit and led by volunteers.
+  We distribute these tools freely and encourage our users to
+  appropriate them, taking ownership and responsibility for their
+  learning.</p>
+</div>
 
-  <div class="cf frame">
-    {% for post in paginator.posts %}
-      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-        <div class="article-item">
-          <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
-          </header>
-          <section class="post-excerpt" itemprop="description">
-            <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-          </section>
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
-          </div>
-        </div>
-      </article>
-    {% endfor %}
+<div id="this-is-sugar">
+  <h1 class="from-toolbar">This is Sugar</h1>
+
+  <img class="first-of-type" src="assets/home-screenshot.svg">
+  <p class="from-white">Sugar is both a desktop and a collection of Activities.
+  Activities, as the name implies, are Apps that involve active
+  engagement from the learner. Activities automatically save
+  results to a journal, where reflections are recorded. Activity
+  instances can be shared between learners; many support real-time
+  collaboration.</p>
+
+  <img class="toolbar-border" src="assets/neighbourhood-screenshot.svg">
+  <p class="from-toolbar">In the Sugar Neighborhood view, learners see their
+  friends clustered around their current Activities; from this view they can
+  join each other’s Activities.  Sugar collaboration works "peer to
+  peer," in a classroom or under a tree; Sugar does not require the
+  Internet.</p>
+
+  <img src="assets/journal-detail-ss.png">
+  <p class="from-white">The Sugar Journal records everything a learner does
+  using Sugar. There is no need to remember to click a Save Button. The focus is on
+  the activity, not the computer. The Journal is also a place for
+  reflection, where learners and their teachers can monitor progress.</p>
+</div>
+
+<div>
+  <a href="inquiry"><div class="star-link maroon">
+    See how Sugar integrates into your classroom<br/>
+    Sugar & <b>Inquiry</b>
+  </div></a>
+</div><br/>
+
+<div class="standardbox" id="activities">
+  <h1>Activities</h1>
+  <p>Below is a small selection from the hundreds of Activities available in the
+  <a href="https://activities.sugarlabs.org/">Sugar Activity Library</a>:</p>
+
+  <ul class='activities'>
+    {% include activities.html %}
+  </ul>
+</div>
+
+<!-- TODO:  Getting started videos
+<div>
+  <a href="getting-started"><div class="star-link lime">
+    Learn how to use Sugar to its potential<br/>
+    <b>Getting Started</b>
+  </div></a>
+</div><br/>-->
+
+<div class="standardbox" id="get-sugar">
+  <h1 class="get-sugar">Get Sugar</h1>
+  <!-- TODO:  Sugarstick-creator
+  <div class="grid grid-stay-mobile" id="get-soas">
+    <img class="col col-1-4 col-padding-top" src="assets/soas.svg">
+    <div class="col col-3-4">
+      <p><b>Sugar on a Stick</b> &ndash; The full Sugar environment &ndash; on
+        any computer at any time &ndash; from a thumb drive.
+        <a class="creator-link" href="#">Download Sugar Stick Creator to get started</a>.</p>
+      <p><small>Sugar Stick Creator requires a thumb drive with at least 2GB
+        storage and downloading ~650MB.  Sugar on a Stick is avaliable for free
+        and does not permanatly effect your computer.</small></p>
+    </div>
+  </div>-->
+  <div class="grid grid-stay-mobile" id="get-soas">
+    <img class="col col-1-4 col-padding-top" src="assets/soas.svg">
+    <div class="col col-3-4">
+      <p><b>Sugar on a Stick</b> &ndash; The full Sugar environment &ndash; on
+        any computer at any time &ndash; from a thumb drive.
+        <a class="creator-link" href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick/Installation">Learn about how to create a Sugar Stick</a>.</p>
+      <p><small>Sugar on a Stick requires a thumb drive with at least 2GB
+        storage and downloading ~650MB.  Sugar on a Stick is available for free
+        and does not permanently affect your computer.</small></p>
+   </div>
+  </div> <div class="grid grid-stay-mobile" id="get-sugar-linux">
+    <img class="col col-1-4" src="assets/computer.svg">
+    <div class="col col-3-4">
+      <p><b>GNU/Linux Install</b> &ndash; The full Sugar environment &ndash;
+        installed on a GNU/Linux computer.</p>
+      <p>Sugar is available as a desktop environment on GNU/Linux.  Up to date
+        packages are available for
+        <a href="http://wiki.sugarlabs.org/go/Fedora">Fedora</a>,
+        <a href="http://wiki.sugarlabs.org/go/Debian">Debian</a>,
+        <a href="http://wiki.sugarlabs.org/go/Ubuntu">Ubuntu</a> and
+        <a href="http://wiki.sugarlabs.org/go/Downloads#Do_you_use_GNU.2FLinux.3F">
+            many other</a> distros.</p>
+    </div>
   </div>
+  <div class="grid" id="get-desktop">
+    <img class="col col-1-4" src="assets/computer.svg">
+    <div class="col col-3-4">
+      <p><b>Sugar Runs Best on Computers</b>.</p>
+      <p>Come back to <a href="/">www.sugarlabs.org</a> on a computer to find
+        how to get the full Sugar environment.</p>
+    </div>
+  </div>
+  <div class="grid" id="get-sugarizer">
+    <img class="col col-1-4" src="assets/sugarizer.svg">
+    <div class="col col-3-4">
+      <p><b>Sugarizer (alpha)</b> &ndash; A taste of Sugar within your browser.</p>
+      <p>Sugarizer provides basic Sugar features and some Activities.
+        Sugarizer works in any modern browser, on mobile, tablet or desktop.</p>
+      <p>Use <a href="http://server.sugarizer.org/">Sugarizer online</a>,
+        <a href="http://sugarizer.org/">download the app</a> or
+        <a href="http://sugarizer.org/">set up a server</a>.</p>
+    </div>
+  </div>
+</div>
 
-  <nav class="pagination" role="navigation">
-    {% if paginator.next_page %}
-      <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">&larr; Older posts</a>
-    {% else %}
-      <a class="newer-posts disabled">&larr; Older posts</a>
-    {% endif %}
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-        <a class="older-posts" href="{{ site.baseurl }}/">Newer posts &rarr;</a>
-      {% else %}
-        <a class="older-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer posts &rarr;</a>
-      {% endif %}
-    {% else %}
-      <a class="older-posts disabled">Newer posts &rarr;</a>
-    {% endif %}
-  </nav>
+<div class="standardbox" id="what-is-sugarlabs">
+  <h1>What is Sugar Labs?</h1>
 
-</main>
+  <p>Sugar Labs, a volunteer-driven, non-profit organization, had 
+  its origins in the One Laptop Per Child project and is now a
+  member project of the <a href="http://conservancy.softwarefreedom.org/">
+  Software Freedom Conservancy</a>. The mission of Sugar Labs is to support
+  the Sugar community of users and developers and establish regional,
+  autonomous “Sugar Labs” around the world to help learners “learn how to
+  learn” by tailoring Sugar to local languages and curricula.</p>
+
+  <p><a href="more">Read more about Sugar Lab's culture and pedagogy.</a></p>
+
+  <p><a href="press">Read press releases and find press resources.</a></p>
+
+  <p><a href="http://schoolserver.org/">School Server resources.</a></p>
+</div>
+
+<div class="standardbox" id="contact">
+  <h1>Join the Conversation</h1>
+
+  <p>Sugar Labs is an organization built around engaging people.  We strive
+  to create software that works well for teachers and students - something that
+  can only happen with your engagement.</p>
+
+  <p>Join us on <a href="https://socialhelp.sugarlabs.org/">Social Help</a> or
+  on our <a href="http://lists.sugarlabs.org/listinfo/iaep">"It's An Education
+  Project" mailing list</a>. Don't feel shy to raise concerns and bring
+  feedback to the table.</p>
+</div>
 
 {% include footer.html %}
